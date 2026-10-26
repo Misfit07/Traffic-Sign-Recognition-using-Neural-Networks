@@ -10,6 +10,8 @@ tlc.egg-info/
 data/downloads/
 data/extracted/
 data/raw/
+data/sample_crop.jpg
 
 # PyTorch raw checkpoint (keep ONNX in tlc/models/)
 models/best_model.pt
+*.pt

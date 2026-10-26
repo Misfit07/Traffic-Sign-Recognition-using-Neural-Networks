@@ -1,57 +1,77 @@
 filepath,label,sub_source,group
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_010.jpg,red,direct,red_andrea-cau-nV7GJmSq3zc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_012.jpg,red,direct,red_andrea-cau-nV7GJmSq3zc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_017.jpg,red,direct,red_andrea-cau-nV7GJmSq3zc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_032.jpg,red,direct,red_andrea-cau-nV7GJmSq3zc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_035.jpg,red,direct,red_andrea-cau-nV7GJmSq3zc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_21.758669378_crop_002.jpg,red,direct,red_2020-04-04 11_18_21.758669378_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_13_12.611444526_crop_001.jpg,red,direct,red_2020-04-04 11_13_12.611444526_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/martin-zenker-ftN2rFWtwZQ-unsplash_crop_000.jpg,red,direct,red_martin-zenker-ftN2rFWtwZQ-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_001.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_002.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_003.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_005.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_006.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_007.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_008.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_009.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_010.jpg,red,direct,red_lerone-pieters-e3ZRNq5uOhU-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_41_44.495697082_crop_000.jpg,red,direct,red_2020-03-30 11_41_44.495697082_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-ljFC9W-859Y-unsplash_crop_005.jpg,red,direct,red_diane-picchiottino-ljFC9W-859Y-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-ljFC9W-859Y-unsplash_crop_006.jpg,red,direct,red_diane-picchiottino-ljFC9W-859Y-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-vd7jENfQmoM-unsplash_crop_000.jpg,red,direct,red_diane-picchiottino-vd7jENfQmoM-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-vd7jENfQmoM-unsplash_crop_003.jpg,red,direct,red_diane-picchiottino-vd7jENfQmoM-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-vd7jENfQmoM-unsplash_crop_006.jpg,red,direct,red_diane-picchiottino-vd7jENfQmoM-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-vd7jENfQmoM-unsplash_crop_007.jpg,red,direct,red_diane-picchiottino-vd7jENfQmoM-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-vd7jENfQmoM-unsplash_crop_013.jpg,red,direct,red_diane-picchiottino-vd7jENfQmoM-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/sharkie-J0OuWXAU8w0-unsplash_crop_001.jpg,red,direct,red_sharkie-J0OuWXAU8w0-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/daniel-newman-F9HDTU9nnfg-unsplash_crop_000.jpg,red,direct,red_daniel-newman-F9HDTU9nnfg-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/daryan-shamkhali-tRDGs9utMUo-unsplash_crop_006.jpg,red,direct,red_daryan-shamkhali-tRDGs9utMUo-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/daryan-shamkhali-tRDGs9utMUo-unsplash_crop_008.jpg,red,direct,red_daryan-shamkhali-tRDGs9utMUo-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_38_38.109583097_crop_000.jpg,red,direct,red_2020-03-30 11_38_38.109583097_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_38_38.109583097_crop_001.jpg,red,direct,red_2020-03-30 11_38_38.109583097_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_29.487911956_crop_001.jpg,red,direct,red_2020-04-04 11_09_29.487911956_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_41.274364356_crop_001.jpg,red,direct,red_2020-04-04 11_31_41.274364356_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_41.274364356_crop_002.jpg,red,direct,red_2020-04-04 11_31_41.274364356_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_41.319582209_crop_001.jpg,red,direct,red_2020-04-04 11_31_41.319582209_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_41.319582209_crop_002.jpg,red,direct,red_2020-04-04 11_31_41.319582209_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 12_01_01.867104022_crop_000.jpg,red,direct,red_2020-03-30 12_01_01.867104022_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 12_01_01.867104022_crop_001.jpg,red,direct,red_2020-03-30 12_01_01.867104022_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 12_01_01.867104022_crop_002.jpg,red,direct,red_2020-03-30 12_01_01.867104022_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_01.903729742_crop_002.jpg,red,direct,red_2020-04-04 11_26_01.903729742_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_02.026576420_crop_002.jpg,red,direct,red_2020-04-04 11_26_02.026576420_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_36_00.671302899_crop_000.jpg,red,direct,red_2020-03-30 11_36_00.671302899_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_36_00.671302899_crop_001.jpg,red,direct,red_2020-03-30 11_36_00.671302899_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_38_23.735429390_crop_000.jpg,red,direct,red_2020-03-30 11_38_23.735429390_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_38_23.735429390_crop_001.jpg,red,direct,red_2020-03-30 11_38_23.735429390_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_06.137747102_crop_001.jpg,red,direct,red_2020-04-04 11_27_06.137747102_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_06.137747102_crop_002.jpg,red,direct,red_2020-04-04 11_27_06.137747102_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_06.392449074_crop_001.jpg,red,direct,red_2020-04-04 11_27_06.392449074_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_06.392449074_crop_002.jpg,red,direct,red_2020-04-04 11_27_06.392449074_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_52_25.842015093_crop_000.jpg,red,direct,red_2020-03-30 11_52_25.842015093_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_52_25.842015093_crop_001.jpg,red,direct,red_2020-03-30 11_52_25.842015093_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_17_07.129502763_crop_002.jpg,red,direct,red_2020-04-04 11_17_07.129502763_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_17_07.169461219_crop_002.jpg,red,direct,red_2020-04-04 11_17_07.169461219_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_10_20.918043545_crop_000.jpg,red,direct,red_2020-04-04 11_10_20.918043545_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-O_ZhCIbj9fM-unsplash_crop_002.jpg,red,direct,red_diane-picchiottino-O_ZhCIbj9fM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-O_ZhCIbj9fM-unsplash_crop_004.jpg,red,direct,red_diane-picchiottino-O_ZhCIbj9fM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-O_ZhCIbj9fM-unsplash_crop_005.jpg,red,direct,red_diane-picchiottino-O_ZhCIbj9fM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-O_ZhCIbj9fM-unsplash_crop_006.jpg,red,direct,red_diane-picchiottino-O_ZhCIbj9fM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_10.549346250_crop_001.jpg,red,direct,red_2020-04-04 11_18_10.549346250_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_10.549346250_crop_002.jpg,red,direct,red_2020-04-04 11_18_10.549346250_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_21.398622090_crop_002.jpg,red,direct,red_2020-04-04 11_18_21.398622090_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_33_17.690410533_crop_002.jpg,red,direct,red_2020-04-04 11_33_17.690410533_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/diane-picchiottino-S9DKG7mnzvw-unsplash_crop_001.jpg,red,direct,red_diane-picchiottino-S9DKG7mnzvw-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_10.595094519_crop_001.jpg,red,direct,red_2020-04-04 11_18_10.595094519_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_10.595094519_crop_002.jpg,red,direct,red_2020-04-04 11_18_10.595094519_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_21.441563806_crop_002.jpg,red,direct,red_2020-04-04 11_18_21.441563806_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/adrian-williams-AU07BMLW1NA-unsplash_crop_000.jpg,red,direct,red_adrian-williams-AU07BMLW1NA-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/adrian-williams-AU07BMLW1NA-unsplash_crop_002.jpg,red,direct,red_adrian-williams-AU07BMLW1NA-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/adrian-williams-AU07BMLW1NA-unsplash_crop_003.jpg,red,direct,red_adrian-williams-AU07BMLW1NA-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/adrian-williams-AU07BMLW1NA-unsplash_crop_005.jpg,red,direct,red_adrian-williams-AU07BMLW1NA-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/adrian-williams-AU07BMLW1NA-unsplash_crop_006.jpg,red,direct,red_adrian-williams-AU07BMLW1NA-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_29.649637507_crop_001.jpg,red,direct,red_2020-04-04 11_09_29.649637507_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_16_31.256753683_crop_002.jpg,red,direct,red_2020-04-04 11_16_31.256753683_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_16_31.307826374_crop_002.jpg,red,direct,red_2020-04-04 11_16_31.307826374_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_38_37.919335434_crop_000.jpg,red,direct,red_2020-03-30 11_38_37.919335434_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_38_37.919335434_crop_001.jpg,red,direct,red_2020-03-30 11_38_37.919335434_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_11_59.894521897_crop_000.jpg,red,direct,red_2020-04-04 11_11_59.894521897_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_43_17.479112303_crop_000.jpg,red,direct,red_2020-03-30 11_43_17.479112303_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_15_17.098381686_crop_000.jpg,red,direct,red_2020-04-04 11_15_17.098381686_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_15_51.639736327_crop_000.jpg,red,direct,red_2020-04-04 11_15_51.639736327_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_13_12.937024009_crop_001.jpg,red,direct,red_2020-04-04 11_13_12.937024009_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_28_21.737773294_crop_000.jpg,red,direct,red_2020-04-04 11_28_21.737773294_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_28_33.936997275_crop_000.jpg,red,direct,red_2020-04-04 11_28_33.936997275_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_36_00.257216992_crop_000.jpg,red,direct,red_2020-03-30 11_36_00.257216992_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_36_00.257216992_crop_001.jpg,red,direct,red_2020-03-30 11_36_00.257216992_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_32_21.688076730_crop_000.jpg,red,direct,red_2020-04-04 11_32_21.688076730_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_32_37.225593553_crop_000.jpg,red,direct,red_2020-04-04 11_32_37.225593553_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_12.315099772_crop_002.jpg,red,direct,red_2020-04-04 11_09_12.315099772_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.665826388_crop_001.jpg,red,direct,red_2020-04-04 11_18_09.665826388_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.665826388_crop_002.jpg,red,direct,red_2020-04-04 11_18_09.665826388_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.709167939_crop_001.jpg,red,direct,red_2020-04-04 11_18_09.709167939_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.709167939_crop_002.jpg,red,direct,red_2020-04-04 11_18_09.709167939_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_55.624624243_crop_000.jpg,red,direct,red_2020-04-04 11_09_55.624624243_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/brian-lundquist-LjLkVfsRYv0-unsplash_crop_007.jpg,red,direct,red_brian-lundquist-LjLkVfsRYv0-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/brian-lundquist-LjLkVfsRYv0-unsplash_crop_008.jpg,red,direct,red_brian-lundquist-LjLkVfsRYv0-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/brian-lundquist-LjLkVfsRYv0-unsplash_crop_009.jpg,red,direct,red_brian-lundquist-LjLkVfsRYv0-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/brian-lundquist-LjLkVfsRYv0-unsplash_crop_010.jpg,red,direct,red_brian-lundquist-LjLkVfsRYv0-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/brian-lundquist-LjLkVfsRYv0-unsplash_crop_014.jpg,red,direct,red_brian-lundquist-LjLkVfsRYv0-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/cam-iOuUhxcZKmE-unsplash_crop_000.jpg,red,direct,red_cam-iOuUhxcZKmE-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/cam-iOuUhxcZKmE-unsplash_crop_001.jpg,red,direct,red_cam-iOuUhxcZKmE-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/cam-iOuUhxcZKmE-unsplash_crop_015.jpg,red,direct,red_cam-iOuUhxcZKmE-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_57.148378054_crop_000.jpg,red,direct,red_2020-04-04 11_09_57.148378054_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_41_34.797141397_crop_000.jpg,red,direct,red_2020-03-30 11_41_34.797141397_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_12_00.860026955_crop_000.jpg,red,direct,red_2020-04-04 11_12_00.860026955_crop
@@ -59,8 +79,8 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_39_03.1658300
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_39_03.165830022_crop_002.jpg,red,direct,red_2020-03-30 11_39_03.165830022_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/vinicius-eloy-bailo-nE9-XfwSOoo-unsplash_crop_002.jpg,red,direct,red_vinicius-eloy-bailo-nE9-XfwSOoo-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_55.090947530_crop_000.jpg,red,direct,red_2020-04-04 11_09_55.090947530_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.659495209_crop_001.jpg,red,direct,red_2020-04-04 11_31_40.659495209_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.659495209_crop_002.jpg,red,direct,red_2020-04-04 11_31_40.659495209_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.701871075_crop_001.jpg,red,direct,red_2020-04-04 11_31_40.701871075_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.701871075_crop_002.jpg,red,direct,red_2020-04-04 11_31_40.701871075_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_53_45.675358686_crop_000.jpg,red,direct,red_2020-03-30 11_53_45.675358686_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_53_45.675358686_crop_001.jpg,red,direct,red_2020-03-30 11_53_45.675358686_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_46_14.284981531_crop_000.jpg,red,direct,red_2020-03-30 11_46_14.284981531_crop
@@ -74,44 +94,38 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/tim-hufner-hQLIqJ2PUuM-unsp
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/tim-hufner-hQLIqJ2PUuM-unsplash_crop_009.jpg,red,direct,red_tim-hufner-hQLIqJ2PUuM-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/tim-hufner-hQLIqJ2PUuM-unsplash_crop_020.jpg,red,direct,red_tim-hufner-hQLIqJ2PUuM-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/tim-hufner-hQLIqJ2PUuM-unsplash_crop_021.jpg,red,direct,red_tim-hufner-hQLIqJ2PUuM-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/tim-hufner-hQLIqJ2PUuM-unsplash_crop_034.jpg,red,direct,red_tim-hufner-hQLIqJ2PUuM-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/tim-hufner-hQLIqJ2PUuM-unsplash_crop_035.jpg,red,direct,red_tim-hufner-hQLIqJ2PUuM-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/tim-hufner-hQLIqJ2PUuM-unsplash_crop_036.jpg,red,direct,red_tim-hufner-hQLIqJ2PUuM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_44.276288651_crop_001.jpg,red,direct,red_2020-04-04 11_26_44.276288651_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_44.276288651_crop_002.jpg,red,direct,red_2020-04-04 11_26_44.276288651_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_44.376441320_crop_000.jpg,red,direct,red_2020-04-04 11_26_44.376441320_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_46_15.073348976_crop_000.jpg,red,direct,red_2020-03-30 11_46_15.073348976_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_46_15.073348976_crop_001.jpg,red,direct,red_2020-03-30 11_46_15.073348976_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_32_21.516533855_crop_000.jpg,red,direct,red_2020-04-04 11_32_21.516533855_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.365248546_crop_001.jpg,red,direct,red_2020-04-04 11_31_40.365248546_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.365248546_crop_002.jpg,red,direct,red_2020-04-04 11_31_40.365248546_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_32_21.688076730_crop_000.jpg,red,direct,red_2020-04-04 11_32_21.688076730_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.449302986_crop_001.jpg,red,direct,red_2020-04-04 11_31_40.449302986_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_31_40.449302986_crop_002.jpg,red,direct,red_2020-04-04 11_31_40.449302986_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_30_12.876922615_crop_000.jpg,red,direct,red_2020-03-30 11_30_12.876922615_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_30_12.876922615_crop_001.jpg,red,direct,red_2020-03-30 11_30_12.876922615_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_000.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_001.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_003.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_004.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_005.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_006.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_007.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/emilio-garcia-fKSS-bkyuYM-unsplash_crop_011.jpg,red,direct,red_emilio-garcia-fKSS-bkyuYM-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_32_37.267708521_crop_000.jpg,red,direct,red_2020-04-04 11_32_37.267708521_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/fabien-bazanegue-4nk8_MxrA_w-unsplash_crop_000.jpg,red,direct,red_fabien-bazanegue-4nk8_MxrA_w-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/fabien-bazanegue-4nk8_MxrA_w-unsplash_crop_005.jpg,red,direct,red_fabien-bazanegue-4nk8_MxrA_w-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_32_37.309105148_crop_000.jpg,red,direct,red_2020-04-04 11_32_37.309105148_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_28.997813058_crop_002.jpg,red,direct,red_2020-04-04 11_09_28.997813058_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_17_08.130914269_crop_000.jpg,red,direct,red_2020-04-04 11_17_08.130914269_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_17_08.171901830_crop_000.jpg,red,direct,red_2020-04-04 11_17_08.171901830_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_13_12.269480317_crop_002.jpg,red,direct,red_2020-04-04 11_13_12.269480317_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_53_46.641874481_crop_000.jpg,red,direct,red_2020-03-30 11_53_46.641874481_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_53_46.641874481_crop_001.jpg,red,direct,red_2020-03-30 11_53_46.641874481_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_12_50.588932430_crop_001.jpg,red,direct,red_2020-04-04 11_12_50.588932430_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/ulvi-safari-0Elr783dLZE-unsplash_crop_000.jpg,red,direct,red_ulvi-safari-0Elr783dLZE-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_45.001233121_crop_000.jpg,red,direct,red_2020-04-04 11_26_45.001233121_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_21_22.092001691_crop_000.jpg,red,direct,red_2020-04-04 11_21_22.092001691_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_07.453481110_crop_001.jpg,red,direct,red_2020-04-04 11_27_07.453481110_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_07.453481110_crop_002.jpg,red,direct,red_2020-04-04 11_27_07.453481110_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_45.146020020_crop_000.jpg,red,direct,red_2020-04-04 11_26_45.146020020_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_21_49.223830664_crop_000.jpg,red,direct,red_2020-04-04 11_21_49.223830664_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_07.509647002_crop_001.jpg,red,direct,red_2020-04-04 11_27_07.509647002_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_27_07.509647002_crop_002.jpg,red,direct,red_2020-04-04 11_27_07.509647002_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_53_21.525529899_crop_000.jpg,red,direct,red_2020-03-30 11_53_21.525529899_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_53_21.525529899_crop_001.jpg,red,direct,red_2020-03-30 11_53_21.525529899_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_16_32.333089265_crop_000.jpg,red,direct,red_2020-04-04 11_16_32.333089265_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_16_32.380824128_crop_000.jpg,red,direct,red_2020-04-04 11_16_32.380824128_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_32_07.448157880_crop_000.jpg,red,direct,red_2020-03-30 11_32_07.448157880_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_32_07.448157880_crop_001.jpg,red,direct,red_2020-03-30 11_32_07.448157880_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.581017128_crop_001.jpg,red,direct,red_2020-04-04 11_18_09.581017128_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.581017128_crop_002.jpg,red,direct,red_2020-04-04 11_18_09.581017128_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.622979989_crop_001.jpg,red,direct,red_2020-04-04 11_18_09.622979989_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_09.622979989_crop_002.jpg,red,direct,red_2020-04-04 11_18_09.622979989_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_14_43.140900469_crop_000.jpg,red,direct,red_2020-04-04 11_14_43.140900469_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 12_01_02.807482510_crop_001.jpg,red,direct,red_2020-03-30 12_01_02.807482510_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_53_46.255387587_crop_000.jpg,red,direct,red_2020-03-30 11_53_46.255387587_crop
@@ -123,47 +137,46 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_32_38.5860823
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_32_38.586082359_crop_001.jpg,red,direct,red_2020-03-30 11_32_38.586082359_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_12_50.831494209_crop_000.jpg,red,direct,red_2020-04-04 11_12_50.831494209_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_12_50.831494209_crop_001.jpg,red,direct,red_2020-04-04 11_12_50.831494209_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_17_08.171901830_crop_000.jpg,red,direct,red_2020-04-04 11_17_08.171901830_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_17_08.253144229_crop_000.jpg,red,direct,red_2020-04-04 11_17_08.253144229_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_39_02.224756550_crop_000.jpg,red,direct,red_2020-03-30 11_39_02.224756550_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_39_02.224756550_crop_001.jpg,red,direct,red_2020-03-30 11_39_02.224756550_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_39_02.224756550_crop_002.jpg,red,direct,red_2020-03-30 11_39_02.224756550_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_39_02.224756550_crop_003.jpg,red,direct,red_2020-03-30 11_39_02.224756550_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_39_02.224756550_crop_004.jpg,red,direct,red_2020-03-30 11_39_02.224756550_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_16_30.838022705_crop_001.jpg,red,direct,red_2020-04-04 11_16_30.838022705_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_000.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_001.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_003.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_004.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_005.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_007.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_011.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_013.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_014.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_017.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kah-hay-chee-oaUZD0ywef4-unsplash_crop_018.jpg,red,direct,red_kah-hay-chee-oaUZD0ywef4-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.300278401_crop_000.jpg,red,direct,red_2020-04-04 11_30_49.300278401_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.300278401_crop_001.jpg,red,direct,red_2020-04-04 11_30_49.300278401_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_03.527596775_crop_000.jpg,red,direct,red_2020-04-04 11_26_03.527596775_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_16_30.881610962_crop_001.jpg,red,direct,red_2020-04-04 11_16_30.881610962_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kenny-eliason-IU4vrMVc_Qc-unsplash_crop_000.jpg,red,direct,red_kenny-eliason-IU4vrMVc_Qc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kenny-eliason-IU4vrMVc_Qc-unsplash_crop_003.jpg,red,direct,red_kenny-eliason-IU4vrMVc_Qc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kenny-eliason-IU4vrMVc_Qc-unsplash_crop_006.jpg,red,direct,red_kenny-eliason-IU4vrMVc_Qc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/kenny-eliason-IU4vrMVc_Qc-unsplash_crop_007.jpg,red,direct,red_kenny-eliason-IU4vrMVc_Qc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.343477234_crop_000.jpg,red,direct,red_2020-04-04 11_30_49.343477234_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.343477234_crop_001.jpg,red,direct,red_2020-04-04 11_30_49.343477234_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_26_04.491402516_crop_000.jpg,red,direct,red_2020-04-04 11_26_04.491402516_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_41_44.704202772_crop_000.jpg,red,direct,red_2020-03-30 11_41_44.704202772_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.027662045_crop_000.jpg,red,direct,red_2020-04-04 11_30_49.027662045_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.027662045_crop_001.jpg,red,direct,red_2020-04-04 11_30_49.027662045_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.120731724_crop_000.jpg,red,direct,red_2020-04-04 11_30_49.120731724_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.120731724_crop_001.jpg,red,direct,red_2020-04-04 11_30_49.120731724_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_45_00.663792322_crop_000.jpg,red,direct,red_2020-03-30 11_45_00.663792322_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_45_00.663792322_crop_001.jpg,red,direct,red_2020-03-30 11_45_00.663792322_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 12_00_52.528484800_crop_000.jpg,red,direct,red_2020-03-30 12_00_52.528484800_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 12_00_52.528484800_crop_001.jpg,red,direct,red_2020-03-30 12_00_52.528484800_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_08_36.280437090_crop_000.jpg,red,direct,red_2020-04-04 11_08_36.280437090_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_09_28.871452007_crop_000.jpg,red,direct,red_2020-04-04 11_09_28.871452007_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.343477234_crop_000.jpg,red,direct,red_2020-04-04 11_30_49.343477234_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.343477234_crop_001.jpg,red,direct,red_2020-04-04 11_30_49.343477234_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.434395075_crop_000.jpg,red,direct,red_2020-04-04 11_30_49.434395075_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_30_49.434395075_crop_001.jpg,red,direct,red_2020-04-04 11_30_49.434395075_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_31_45.535599855_crop_000.jpg,red,direct,red_2020-03-30 11_31_45.535599855_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_42_22.537325347_crop_000.jpg,red,direct,red_2020-03-30 11_42_22.537325347_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-03-30 11_42_22.537325347_crop_001.jpg,red,direct,red_2020-03-30 11_42_22.537325347_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_21.892277073_crop_002.jpg,red,direct,red_2020-04-04 11_18_21.892277073_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_21.935880431_crop_002.jpg,red,direct,red_2020-04-04 11_18_21.935880431_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_10_21.323753353_crop_000.jpg,not_red,green,not_red_2020-04-04 11_10_21.323753353_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_33_17.783617280_crop_001.jpg,not_red,green,not_red_2020-04-04 11_33_17.783617280_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_33_17.783617280_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_33_17.783617280_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/daniel-bazalar--rtYx7qE6oM-unsplash_crop_001.jpg,not_red,green,not_red_daniel-bazalar
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_09_56.141253121_01.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_09_56.141253121
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_09_56.141253121_03.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_09_56.141253121
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_09_56.141253121_06.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_09_56.141253121
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_16_42.035849488_00.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_16_42.035849488
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_16_42.035849488_01.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_16_42.035849488
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_16_42.035849488_03.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_16_42.035849488
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_16_42.035849488_06.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_16_42.035849488
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_14_43.865219864_crop_001.jpg,not_red,yellow,not_red_2020-04-04 11_14_43.865219864_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/diane-picchiottino-3yBMjuk5YcA-unsplash_crop_001.jpg,not_red,green,not_red_diane-picchiottino-3yBMjuk5YcA-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/diane-picchiottino-3yBMjuk5YcA-unsplash_crop_007.jpg,not_red,green,not_red_diane-picchiottino-3yBMjuk5YcA-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_23_40.561213778_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_23_40.561213778_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_13_13.055856409_crop_000.jpg,not_red,green,not_red_2020-04-04 11_13_13.055856409_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_18_21.353961934_crop_001.jpg,not_red,green,not_red_2020-04-04 11_18_21.353961934_crop
@@ -186,6 +199,8 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_35_
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_18_10.549346250_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_18_10.549346250_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_09_12.111327521_crop_001.jpg,not_red,green,not_red_2020-04-04 11_09_12.111327521_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_09_12.111327521_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_09_12.111327521_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/fabien-bazanegue-4nk8_MxrA_w-unsplash_crop_001.jpg,not_red,green,not_red_fabien-bazanegue-4nk8_MxrA_w-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/fabien-bazanegue-4nk8_MxrA_w-unsplash_crop_003.jpg,not_red,green,not_red_fabien-bazanegue-4nk8_MxrA_w-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_26_44.376441320_crop_001.jpg,not_red,green,not_red_2020-04-04 11_26_44.376441320_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_32_00.277402490_crop_001.jpg,not_red,green,not_red_2020-04-04 11_32_00.277402490_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_32_00.277402490_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_32_00.277402490_crop
@@ -194,6 +209,17 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_31_
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_18_21.441563806_crop_001.jpg,not_red,green,not_red_2020-04-04 11_18_21.441563806_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_18_21.441563806_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_18_21.441563806_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_18_10.504417074_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_18_10.504417074_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_14_42.874942263_00.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_14_42.874942263
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_14_42.874942263_01.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_14_42.874942263
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_14_42.874942263_03.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_14_42.874942263
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_14_42.874942263_04.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_14_42.874942263
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_14_42.874942263_05.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_14_42.874942263
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_14_42.874942263_06.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_14_42.874942263
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_14_42.874942263_07.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_14_42.874942263
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_41_35.423139114_00.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_41_35.423139114
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_41_35.423139114_03.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_41_35.423139114
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_41_35.423139114_04.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_41_35.423139114
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_41_35.423139114_05.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_41_35.423139114
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_26_44.905199109_crop_001.jpg,not_red,green,not_red_2020-04-04 11_26_44.905199109_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 12_01_02.618763214_crop_001.jpg,not_red,green,not_red_2020-03-30 12_01_02.618763214_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 12_01_02.618763214_crop_002.jpg,not_red,green,not_red_2020-03-30 12_01_02.618763214_crop
@@ -229,15 +255,12 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_43_
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_13_21.511559076_crop_000.jpg,not_red,green,not_red_2020-04-04 11_13_21.511559076_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/tobias-reich-v9vk7z7DQtc-unsplash_crop_001.jpg,not_red,green,not_red_tobias-reich-v9vk7z7DQtc-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_18_10.072514973_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_18_10.072514973_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_000.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_003.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_005.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_006.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_008.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_009.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_013.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_014.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/flow-clark-Uk-uD4USq4E-unsplash_crop_016.jpg,not_red,green,not_red_flow-clark-Uk-uD4USq4E-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_30_34.320632908_00.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_30_34.320632908
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_30_34.320632908_02.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_30_34.320632908
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_30_34.320632908_03.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_30_34.320632908
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_30_34.320632908_04.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_30_34.320632908
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_30_34.320632908_05.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_30_34.320632908
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_30_34.320632908_07.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_30_34.320632908
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_31_40.786835784_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_31_40.786835784_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_18_21.803746630_crop_001.jpg,not_red,green,not_red_2020-04-04 11_18_21.803746630_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_18_21.803746630_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_18_21.803746630_crop
@@ -252,7 +275,11 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_38_
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_38_07.676617270_crop_001.jpg,not_red,green,not_red_2020-03-30 11_38_07.676617270_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_45_01.559970532_crop_000.jpg,not_red,green,not_red_2020-03-30 11_45_01.559970532_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_45_01.559970532_crop_001.jpg,not_red,green,not_red_2020-03-30 11_45_01.559970532_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/illia-panasenko-T-9iP99i_V0-unsplash_crop_000.jpg,not_red,green,not_red_illia-panasenko-T-9iP99i_V0-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_32_07.448157880_00.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_32_07.448157880
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_32_07.448157880_02.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_32_07.448157880
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_32_07.448157880_04.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_32_07.448157880
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_32_07.448157880_06.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_32_07.448157880
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-03-30 11_32_07.448157880_07.jpg,not_red,hard_negatives,not_red_hard_neg_2020-03-30 11_32_07.448157880
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_09_11.992939366_crop_001.jpg,not_red,green,not_red_2020-04-04 11_09_11.992939366_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_09_11.992939366_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_09_11.992939366_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_45_12.278003949_crop_000.jpg,not_red,green,not_red_2020-03-30 11_45_12.278003949_crop
@@ -267,7 +294,7 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_13
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_13_12.310715569_crop_001.jpg,not_red,yellow,not_red_2020-04-04 11_13_12.310715569_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_51_39.033377846_crop_000.jpg,not_red,green,not_red_2020-03-30 11_51_39.033377846_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_51_39.033377846_crop_001.jpg,not_red,green,not_red_2020-03-30 11_51_39.033377846_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/archee-lal-tYJjWVUbxcs-unsplash_crop_001.jpg,not_red,green,not_red_archee-lal-tYJjWVUbxcs-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/arthur-edelmans-VobNNgpXOTo-unsplash_crop_000.jpg,not_red,green,not_red_arthur-edelmans-VobNNgpXOTo-unsplash_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_26_21.170606083_crop_001.jpg,not_red,green,not_red_2020-04-04 11_26_21.170606083_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_26_21.170606083_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_26_21.170606083_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_18_21.528438338_crop_001.jpg,not_red,green,not_red_2020-04-04 11_18_21.528438338_crop
@@ -283,8 +310,10 @@ C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 12_02_
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_27_07.146393143_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_27_07.146393143_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_37_13.078960391_crop_000.jpg,not_red,green,not_red_2020-03-30 11_37_13.078960391_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_13_23.443126461_crop_002.jpg,not_red,yellow,not_red_2020-04-04 11_13_23.443126461_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/richard-lu-iXdxrrfx_mc-unsplash_crop_003.jpg,not_red,green,not_red_richard-lu-iXdxrrfx_mc-unsplash_crop
-C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/richard-lu-iXdxrrfx_mc-unsplash_crop_008.jpg,not_red,green,not_red_richard-lu-iXdxrrfx_mc-unsplash_crop
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_13_23.157114334_02.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_13_23.157114334
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_13_23.157114334_05.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_13_23.157114334
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_13_23.157114334_06.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_13_23.157114334
+C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_13_23.157114334_07.jpg,not_red,hard_negatives,not_red_hard_neg_2020-04-04 11_13_23.157114334
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_27_28.235711814_crop_000.jpg,not_red,yellow,not_red_2020-04-04 11_27_28.235711814_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_09_28.871452007_crop_001.jpg,not_red,green,not_red_2020-04-04 11_09_28.871452007_crop
 C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_28_23.276175910_crop_000.jpg,not_red,green,not_red_2020-04-04 11_28_23.276175910_crop

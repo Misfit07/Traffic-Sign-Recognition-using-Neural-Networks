@@ -40,13 +40,20 @@ def run_predict(args: argparse.Namespace) -> int:
     if args.json:
         records: list[dict[str, Any]] = []
         for f in files:
-            p_red = classify_proba(f, model_path=model_p)
-            label = "red" if p_red >= th else "not_red"
-            records.append({
-                "file": str(f).replace("\\", "/"),
-                "label": label,
-                "p_red": round(p_red, 4),
-            })
+            if args.scene:
+                lbl = classify(f, threshold=th, model_path=model_p, scene=True)
+                records.append({
+                    "file": str(f).replace("\\", "/"),
+                    "label": lbl,
+                })
+            else:
+                p_red = classify_proba(f, model_path=model_p)
+                label = "red" if p_red >= th else "not_red"
+                records.append({
+                    "file": str(f).replace("\\", "/"),
+                    "label": label,
+                    "p_red": round(p_red, 4),
+                })
         print(json.dumps(records, indent=2))
         return 0
 

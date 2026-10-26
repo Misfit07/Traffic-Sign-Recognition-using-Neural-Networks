@@ -36,14 +36,38 @@ def test_web_index_get(server_address: tuple[str, int]) -> None:
         assert "dropzone" in html
 
 @pytest.mark.skipif(not MODEL_EXISTS, reason="Trained model not yet exported")
-def test_web_api_classify_post(server_address: tuple[str, int], tmp_path: Path) -> None:
+def test_web_api_classify_scene_no_light(server_address: tuple[str, int], tmp_path: Path) -> None:
+    host, port = server_address
+    img = Image.new("RGB", (64, 64), (128, 128, 128))
+    buf = io.BytesIO()
+    img.save(buf, format="JPEG")
+    img_bytes = buf.getvalue()
+
+    params = urllib.parse.urlencode({"filename": "test.jpg", "threshold": 0.5, "scene": "true"})
+    url = f"http://{host}:{port}/api/classify?{params}"
+    req = urllib.request.Request(
+        url,
+        data=img_bytes,
+        headers={"Content-Type": "application/octet-stream"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req) as response:
+        assert response.status == 200
+        data = json.loads(response.read().decode("utf-8"))
+        assert "label" in data
+        assert "p_red" in data
+        assert "latency_ms" in data
+        assert data["label"] == "no_traffic_light_found"
+
+@pytest.mark.skipif(not MODEL_EXISTS, reason="Trained model not yet exported")
+def test_web_api_classify_direct_crop(server_address: tuple[str, int], tmp_path: Path) -> None:
     host, port = server_address
     img = Image.new("RGB", (64, 64), (255, 0, 0))
     buf = io.BytesIO()
     img.save(buf, format="JPEG")
     img_bytes = buf.getvalue()
 
-    params = urllib.parse.urlencode({"filename": "test.jpg", "threshold": 0.5})
+    params = urllib.parse.urlencode({"filename": "test.jpg", "threshold": 0.5, "scene": "false"})
     url = f"http://{host}:{port}/api/classify?{params}"
     req = urllib.request.Request(
         url,

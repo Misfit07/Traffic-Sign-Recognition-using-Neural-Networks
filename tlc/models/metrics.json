@@ -1,0 +1,28 @@
+{
+  "threshold": 0.16,
+  "val_metrics": {
+    "threshold": 0.16,
+    "red_recall": 0.9820359281437125,
+    "red_precision": 0.6533864541832669,
+    "f1": 0.7846889952153109,
+    "accuracy": 0.7478991596638656
+  },
+  "test_metrics": {
+    "threshold": 0.16,
+    "accuracy": 0.7717717717717718,
+    "red_precision": 0.6952789699570815,
+    "red_recall": 0.9700598802395209,
+    "red_f1": 0.8099999999999999,
+    "roc_auc": 0.9532861986869635,
+    "pr_auc": 0.959466410326941
+  },
+  "labels": [
+    "not_red",
+    "red"
+  ],
+  "selection_reason": "Selected highest threshold (0.160) achieving target red recall >= 0.98",
+  "imbalance_strategy": "pos_weight",
+  "model_size_mb": 5.803255081176758,
+  "parity_max_diff": 9.357929229736328e-06,
+  "quantized": false
+}

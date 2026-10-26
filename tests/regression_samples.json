@@ -1,26 +1,26 @@
 {
   "red": [
-    "data/raw/red/2020-03-30 11_41_44.495697082_crop_000.jpg",
-    "data/raw/red/diane-picchiottino-ljFC9W-859Y-unsplash_crop_005.jpg",
-    "data/raw/red/diane-picchiottino-ljFC9W-859Y-unsplash_crop_006.jpg",
-    "data/raw/red/sharkie-J0OuWXAU8w0-unsplash_crop_001.jpg",
-    "data/raw/red/daniel-newman-F9HDTU9nnfg-unsplash_crop_000.jpg",
-    "data/raw/red/2020-03-30 11_38_38.109583097_crop_000.jpg",
-    "data/raw/red/2020-03-30 11_38_38.109583097_crop_001.jpg",
-    "data/raw/red/2020-04-04 11_09_29.487911956_crop_001.jpg",
-    "data/raw/red/2020-04-04 11_31_41.274364356_crop_001.jpg",
-    "data/raw/red/2020-04-04 11_31_41.274364356_crop_002.jpg"
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_010.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_012.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_017.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_032.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/andrea-cau-nV7GJmSq3zc-unsplash_crop_035.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_18_21.758669378_crop_002.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/2020-04-04 11_13_12.611444526_crop_001.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/martin-zenker-ftN2rFWtwZQ-unsplash_crop_000.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_001.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/red/lerone-pieters-e3ZRNq5uOhU-unsplash_crop_002.jpg"
   ],
   "not_red": [
-    "data/raw/not_red/green/2020-04-04 11_33_17.783617280_crop_001.jpg",
-    "data/raw/not_red/green/daniel-bazalar--rtYx7qE6oM-unsplash_crop_001.jpg",
-    "data/raw/not_red/yellow/2020-04-04 11_14_43.865219864_crop_001.jpg",
-    "data/raw/not_red/green/2020-04-04 11_18_21.353961934_crop_001.jpg",
-    "data/raw/not_red/green/2020-03-30 11_46_50.801035090_crop_000.jpg",
-    "data/raw/not_red/green/2020-03-30 11_46_50.801035090_crop_001.jpg",
-    "data/raw/not_red/green/2020-04-04 11_09_12.474694598_crop_001.jpg",
-    "data/raw/not_red/green/2020-04-04 11_13_21.647037741_crop_000.jpg",
-    "data/raw/not_red/green/2020-04-04 11_26_03.091228709_crop_000.jpg",
-    "data/raw/not_red/green/2020-03-30 11_46_32.803167640_crop_000.jpg"
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_10_21.323753353_crop_000.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_16_42.035849488_01.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_16_42.035849488_03.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/hard_negatives/hard_neg_2020-04-04 11_16_42.035849488_06.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/diane-picchiottino-3yBMjuk5YcA-unsplash_crop_007.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/yellow/2020-04-04 11_23_40.561213778_crop_000.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_18_21.353961934_crop_001.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_46_50.801035090_crop_000.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-03-30 11_46_50.801035090_crop_001.jpg",
+    "C:/Users/jeffe/Downloads/neuralNetworjk/data/raw/not_red/green/2020-04-04 11_09_12.474694598_crop_001.jpg"
   ]
 }

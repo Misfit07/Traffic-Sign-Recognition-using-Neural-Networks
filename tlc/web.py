@@ -8,6 +8,7 @@ from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 
+from tlc.detect import classify_scene_details
 from tlc.engine import (
     classify_proba,
     get_default_model_path,
@@ -39,37 +40,45 @@ HTML_PAGE = """<!DOCTYPE html>
         <h1 class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
           TLC <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">Production Classifier</span>
         </h1>
-        <p class="text-xs text-slate-400">Zero-Torch ONNX Inference &bull; Real Street Dataset &bull; MobileNetV3-Small</p>
+        <p class="text-xs text-slate-400">Zero-Torch ONNX &bull; MobileNetV3 + YOLOv8 Detection &bull; 3 Output States</p>
       </div>
     </div>
     <div class="text-right hidden sm:block">
-      <div class="text-xs text-slate-400">Threshold: <span id="hdr-th" class="font-mono text-emerald-400">0.210</span></div>
-      <div class="text-xs text-slate-500">Red Recall: 100.0% (Zero Misses)</div>
+      <div class="text-xs text-slate-400">Threshold: <span id="hdr-th" class="font-mono text-emerald-400">0.160</span></div>
+      <div class="text-xs text-slate-500">Val Red Recall: 98.2% (Calibrated)</div>
     </div>
   </header>
 
   <main class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-12 gap-6">
     <div class="md:col-span-7 flex flex-col space-y-4">
-      <div id="dropzone" class="border-2 border-dashed border-slate-700 hover:border-red-500/60 rounded-2xl p-8 bg-slate-900/60 transition-all cursor-pointer flex flex-col items-center justify-center min-h-[220px] text-center group">
+      <div id="dropzone" class="border-2 border-dashed border-slate-700 hover:border-red-500/60 rounded-2xl p-8 bg-slate-900/60 transition-all cursor-pointer flex flex-col items-center justify-center min-h-[200px] text-center group">
         <input type="file" id="file-input" multiple accept="image/*" class="hidden">
         <div class="w-12 h-12 rounded-full bg-slate-800 group-hover:bg-red-500/10 flex items-center justify-center mb-3 text-slate-400 group-hover:text-red-400 transition-colors">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
           </svg>
         </div>
-        <p class="text-sm font-medium text-slate-200">Drag & drop traffic light images here</p>
+        <p class="text-sm font-medium text-slate-200">Drag & drop traffic light or street images here</p>
         <p class="text-xs text-slate-400 mt-1">or <span class="text-red-400 underline font-semibold">browse files</span> (supports JPG, PNG, WEBP)</p>
+      </div>
+
+      <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between">
+        <label for="scene-toggle" class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" id="scene-toggle" checked class="w-4 h-4 rounded bg-slate-800 border-slate-700 text-red-500 focus:ring-0 cursor-pointer">
+          <span class="text-xs text-slate-300 font-medium">Scene Auto-Detect (YOLOv8)</span>
+        </label>
+        <span class="text-[11px] text-slate-500">Finds light or returns "no traffic light"</span>
       </div>
 
       <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-4 space-y-3">
         <div class="flex items-center justify-between">
-          <label class="text-xs font-semibold text-slate-300">Decision Threshold (<span id="th-val">0.210</span>)</label>
-          <button id="reset-th" class="text-[11px] text-red-400 hover:text-red-300">Reset default (0.210)</button>
+          <label class="text-xs font-semibold text-slate-300">Decision Threshold (<span id="th-val">0.160</span>)</label>
+          <button id="reset-th" class="text-[11px] text-red-400 hover:text-red-300">Reset default (0.160)</button>
         </div>
-        <input type="range" id="threshold-slider" min="0.01" max="0.99" step="0.01" value="0.21" class="w-full accent-red-500 cursor-pointer">
+        <input type="range" id="threshold-slider" min="0.01" max="0.99" step="0.01" value="0.16" class="w-full accent-red-500 cursor-pointer">
         <div class="flex justify-between text-[10px] text-slate-500 font-mono">
           <span>0.01 (High Recall)</span>
-          <span>0.50 (Balanced)</span>
+          <span>0.16 (Calibrated Val)</span>
           <span>0.99 (High Precision)</span>
         </div>
       </div>
@@ -83,12 +92,12 @@ HTML_PAGE = """<!DOCTYPE html>
     <div class="md:col-span-5 flex flex-col space-y-4">
       <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col items-center">
         <div class="housing p-4 rounded-3xl border border-slate-700/80 shadow-2xl flex flex-col space-y-3 mb-6">
-          <div id="lamp-red" class="w-14 h-14 rounded-full bg-red-950/60 border border-red-900/40 transition-all duration-300"></div>
-          <div id="lamp-yellow" class="w-14 h-14 rounded-full bg-yellow-950/60 border border-yellow-900/40 transition-all duration-300"></div>
-          <div id="lamp-green" class="w-14 h-14 rounded-full bg-green-950/60 border border-green-900/40 transition-all duration-300"></div>
+          <div id="lamp-red" class="w-14 h-14 rounded-full bg-red-950/40 border border-red-950 transition-all duration-300"></div>
+          <div id="lamp-yellow" class="w-14 h-14 rounded-full bg-yellow-950/40 border border-yellow-950 transition-all duration-300"></div>
+          <div id="lamp-green" class="w-14 h-14 rounded-full bg-green-950/40 border border-green-950 transition-all duration-300"></div>
         </div>
 
-        <div id="result-badge" class="px-6 py-2 rounded-full text-base font-bold uppercase tracking-wider bg-slate-800 text-slate-400 border border-slate-700 mb-4 transition-all">
+        <div id="result-badge" class="px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider bg-slate-800 text-slate-400 border border-slate-700 mb-4 transition-all text-center">
           Awaiting Image
         </div>
 
@@ -121,6 +130,7 @@ HTML_PAGE = """<!DOCTYPE html>
     const thVal = document.getElementById('th-val');
     const hdrTh = document.getElementById('hdr-th');
     const resetTh = document.getElementById('reset-th');
+    const sceneToggle = document.getElementById('scene-toggle');
     const lampRed = document.getElementById('lamp-red');
     const lampYellow = document.getElementById('lamp-yellow');
     const lampGreen = document.getElementById('lamp-green');
@@ -134,7 +144,7 @@ HTML_PAGE = """<!DOCTYPE html>
     const batchList = document.getElementById('batch-list');
 
     let currentFile = null;
-    let currentProba = null;
+    let currentData = null;
 
     dropzone.addEventListener('click', () => fileInput.click());
     dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('border-red-500'); });
@@ -153,14 +163,18 @@ HTML_PAGE = """<!DOCTYPE html>
       const val = parseFloat(e.target.value).toFixed(2);
       thVal.textContent = val;
       hdrTh.textContent = val;
-      if (currentProba !== null) renderResult(currentProba, parseFloat(val));
+      if (currentData !== null) renderResult(currentData, parseFloat(val));
     });
 
     resetTh.addEventListener('click', () => {
-      slider.value = 0.21;
-      thVal.textContent = "0.210";
-      hdrTh.textContent = "0.210";
-      if (currentProba !== null) renderResult(currentProba, 0.21);
+      slider.value = 0.16;
+      thVal.textContent = "0.160";
+      hdrTh.textContent = "0.160";
+      if (currentData !== null) renderResult(currentData, 0.16);
+    });
+
+    sceneToggle.addEventListener('change', () => {
+      if (currentFile !== null) uploadAndClassify(currentFile, false);
     });
 
     async function handleFiles(files) {
@@ -185,7 +199,8 @@ HTML_PAGE = """<!DOCTYPE html>
       const buf = await file.arrayBuffer();
       const params = new URLSearchParams({
         filename: file.name,
-        threshold: slider.value
+        threshold: slider.value,
+        scene: sceneToggle.checked ? 'true' : 'false'
       });
 
       try {
@@ -198,20 +213,28 @@ HTML_PAGE = """<!DOCTYPE html>
         if (data.error) { alert(data.error); return; }
 
         if (!isBatch || file === currentFile) {
-          currentProba = data.p_red;
+          currentData = data;
           latencyNum.textContent = `${data.latency_ms.toFixed(1)} ms`;
-          renderResult(data.p_red, parseFloat(slider.value));
+          renderResult(data, parseFloat(slider.value));
         }
 
         if (isBatch) {
           const item = document.createElement('div');
           item.className = 'flex items-center justify-between text-xs bg-slate-950/60 p-2 rounded-lg border border-slate-800';
-          const isRed = data.p_red >= parseFloat(slider.value);
+          let tagClass = 'bg-slate-800 text-slate-400 border border-slate-700';
+          let tagText = 'NO LIGHT';
+          if (data.label === 'red') {
+            tagClass = 'bg-red-500/20 text-red-400 border border-red-500/30';
+            tagText = 'RED';
+          } else if (data.label === 'not_red') {
+            tagClass = 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+            tagText = 'NOT RED';
+          }
           item.innerHTML = `
             <span class="truncate max-w-[180px] font-mono">${file.name}</span>
             <div class="flex items-center space-x-2">
-              <span class="font-mono text-slate-400">${(data.p_red * 100).toFixed(1)}%</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${isRed ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'}">${isRed ? 'RED' : 'NOT RED'}</span>
+              <span class="font-mono text-slate-400">${data.p_red !== null ? (data.p_red * 100).toFixed(1) + '%' : 'N/A'}</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${tagClass}">${tagText}</span>
             </div>
           `;
           batchList.appendChild(item);
@@ -221,29 +244,47 @@ HTML_PAGE = """<!DOCTYPE html>
       }
     }
 
-    function renderResult(pRed, threshold) {
+    function renderResult(data, threshold) {
+      const label = data.label;
+      const pRed = data.p_red;
+
+      if (label === 'no_traffic_light_found') {
+        probNum.textContent = 'N/A (No light detected)';
+        probBar.style.width = '0%';
+        probBar.className = 'h-full bg-slate-700 transition-all duration-300';
+
+        lampRed.className = 'w-14 h-14 rounded-full border bg-red-950/40 border-red-950 transition-all duration-300';
+        lampYellow.className = 'w-14 h-14 rounded-full border bg-yellow-950/40 border-yellow-950 transition-all duration-300';
+        lampGreen.className = 'w-14 h-14 rounded-full border bg-green-950/40 border-green-950 transition-all duration-300';
+
+        resultBadge.className = 'px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider bg-slate-800/90 text-amber-300 border border-amber-500/40 mb-4 transition-all text-center';
+        resultBadge.textContent = 'NO TRAFFIC LIGHT FOUND';
+        return;
+      }
+
       const isRed = pRed >= threshold;
       probNum.textContent = `${(pRed * 100).toFixed(1)}% (${pRed.toFixed(4)})`;
       probBar.style.width = `${Math.min(100, pRed * 100)}%`;
 
-      lampRed.className = "w-14 h-14 rounded-full border transition-all duration-300 " + (isRed ? "bg-red-500 glow-red border-red-300" : "bg-red-950/40 border-red-950");
-      lampYellow.className = "w-14 h-14 rounded-full border transition-all duration-300 " + (!isRed && pRed > 0.10 ? "bg-yellow-400 glow-yellow border-yellow-200" : "bg-yellow-950/40 border-yellow-950");
-      lampGreen.className = "w-14 h-14 rounded-full border transition-all duration-300 " + (!isRed && pRed <= 0.10 ? "bg-green-500 glow-green border-green-200" : "bg-green-950/40 border-green-950");
+      lampRed.className = 'w-14 h-14 rounded-full border transition-all duration-300 ' + (isRed ? 'bg-red-500 glow-red border-red-300' : 'bg-red-950/40 border-red-950');
+      lampYellow.className = 'w-14 h-14 rounded-full border transition-all duration-300 ' + (!isRed && pRed > 0.15 ? 'bg-yellow-400 glow-yellow border-yellow-200' : 'bg-yellow-950/40 border-yellow-950');
+      lampGreen.className = 'w-14 h-14 rounded-full border transition-all duration-300 ' + (!isRed && pRed <= 0.15 ? 'bg-green-500 glow-green border-green-200' : 'bg-green-950/40 border-green-950');
 
       if (isRed) {
-        resultBadge.className = "px-6 py-2 rounded-full text-base font-bold uppercase tracking-wider bg-red-500/20 text-red-400 border border-red-500/40 glow-red mb-4 transition-all";
-        resultBadge.textContent = "RED LIGHT";
-        probBar.className = "h-full bg-red-500 transition-all duration-300";
+        resultBadge.className = 'px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider bg-red-500/20 text-red-400 border border-red-500/40 glow-red mb-4 transition-all text-center';
+        resultBadge.textContent = 'RED LIGHT';
+        probBar.className = 'h-full bg-red-500 transition-all duration-300';
       } else {
-        resultBadge.className = "px-6 py-2 rounded-full text-base font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 glow-green mb-4 transition-all";
-        resultBadge.textContent = "NOT RED";
-        probBar.className = "h-full bg-emerald-500 transition-all duration-300";
+        resultBadge.className = 'px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 glow-green mb-4 transition-all text-center';
+        resultBadge.textContent = 'NOT RED';
+        probBar.className = 'h-full bg-emerald-500 transition-all duration-300';
       }
     }
   </script>
 </body>
 </html>
 """
+
 
 class TLCRequestHandler(BaseHTTPRequestHandler):
     def log_message(self, format: str, *args: Any) -> None:
@@ -277,6 +318,7 @@ class TLCRequestHandler(BaseHTTPRequestHandler):
         params = urllib.parse.parse_qs(query_string)
         filename = params.get("filename", ["uploaded_image.jpg"])[0]
         th_val = params.get("threshold", [None])[0]
+        scene_mode = params.get("scene", ["true"])[0].lower() == "true"
         th_override = float(th_val) if th_val else None
 
         length = int(self.headers.get("Content-Length", 0))
@@ -288,19 +330,37 @@ class TLCRequestHandler(BaseHTTPRequestHandler):
 
         try:
             t0 = time.perf_counter()
-            p_red = classify_proba(img_bytes)
+            active_th = resolve_threshold(get_default_model_path(), th_override)
+
+            if scene_mode:
+                details = classify_scene_details(
+                    img_bytes,
+                    threshold=active_th,
+                    raise_if_empty=False,
+                )
+                if not details:
+                    label = "no_traffic_light_found"
+                    p_red: float | None = None
+                    is_red_val = False
+                else:
+                    is_red_val = any(d["label"] == "red" for d in details)
+                    label = "red" if is_red_val else "not_red"
+                    p_red = round(max(d["p_red"] for d in details), 4)
+            else:
+                p_red_calc = classify_proba(img_bytes)
+                p_red = round(p_red_calc, 4)
+                label = "red" if p_red_calc >= active_th else "not_red"
+                is_red_val = bool(label == "red")
+
             t1 = time.perf_counter()
             latency_ms = (t1 - t0) * 1000.0
-
-            active_th = resolve_threshold(get_default_model_path(), th_override)
-            label = "red" if p_red >= active_th else "not_red"
 
             resp = {
                 "filename": filename,
                 "label": label,
-                "p_red": round(p_red, 4),
+                "p_red": p_red,
                 "threshold": round(active_th, 4),
-                "is_red": bool(label == "red"),
+                "is_red": is_red_val,
                 "latency_ms": round(latency_ms, 2),
             }
             self.send_response(HTTPStatus.OK)
@@ -315,6 +375,7 @@ class TLCRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json")
         self.end_headers()
         self.wfile.write(json.dumps({"error": message}).encode("utf-8"))
+
 
 def run_server(
     host: str = "127.0.0.1",

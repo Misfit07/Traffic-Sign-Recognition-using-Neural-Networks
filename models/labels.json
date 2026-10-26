@@ -3,9 +3,9 @@
     "not_red",
     "red"
   ],
-  "threshold": 0.21000000000000002,
+  "threshold": 0.16,
   "imbalance_strategy": "pos_weight",
-  "selection_reason": "Selected highest threshold (0.210) achieving target red recall >= 0.98",
+  "selection_reason": "Selected highest threshold (0.160) achieving target red recall >= 0.98",
   "quantized": false,
   "model_size_mb": 5.803255081176758
 }
