@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import base64
+import io
 import json
 import time
 import urllib.parse
@@ -15,6 +17,7 @@ from tlc.engine import (
     load_metadata,
     resolve_threshold,
 )
+from tlc.sign_engine import apply_clahe, classify_sign, load_image, load_sign_labels
 
 HTML_PAGE = """<!DOCTYPE html>
 <html lang="en">
@@ -52,22 +55,27 @@ HTML_PAGE = """<!DOCTYPE html>
           <div class="flex flex-col">
             <div class="flex items-center space-x-1.5">
               <span class="text-xl font-extrabold tracking-tight text-slate-900">TLC</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200">v2.0 PROD</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200">VISION AI</span>
             </div>
           </div>
         </a>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-1 text-sm font-semibold text-slate-600">
-        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-900">Classifier</span>
-        <span class="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer" onclick="toggleView('batch')">Batch Queue</span>
-        <span class="px-3 py-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer" onclick="toggleView('about')">Architecture</span>
-      </nav>
+      <div class="inline-flex p-1 bg-slate-100 rounded-2xl border border-slate-200 text-xs font-bold">
+        <button id="btn-mode-light" onclick="setMode('light')" class="px-4 py-1.5 rounded-xl bg-white text-slate-900 shadow-sm transition-all flex items-center space-x-1.5">
+          <span>🚦</span>
+          <span>Traffic Signals</span>
+        </button>
+        <button id="btn-mode-sign" onclick="setMode('sign')" class="px-4 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition-all flex items-center space-x-1.5">
+          <span>🛑</span>
+          <span>Traffic Signs (43 Classes)</span>
+        </button>
+      </div>
 
       <div class="flex items-center space-x-3">
-        <div class="hidden sm:flex items-center space-x-2 text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200">
-          <span class="text-slate-500">Threshold:</span>
-          <span id="hdr-th" class="mono text-red-600 font-bold">0.160</span>
+        <div id="hdr-stat-box" class="hidden sm:flex items-center space-x-2 text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200">
+          <span id="hdr-stat-lbl" class="text-slate-500">Threshold:</span>
+          <span id="hdr-stat-val" class="mono text-red-600 font-bold">0.160</span>
         </div>
         <a href="https://github.com/Misfit07/Traffic-Sign-Recognition-using-Neural-Networks" target="_blank" rel="noopener" class="text-xs font-bold px-3 py-1.5 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors flex items-center space-x-1.5 shadow-sm">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -78,11 +86,11 @@ HTML_PAGE = """<!DOCTYPE html>
   </header>
 
   <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-8 md:py-12 flex flex-col items-center">
-    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-3">
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-3">
         Traffic Light Classifier
       </h1>
-      <p class="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
+      <p id="hero-subtitle" class="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
         Upload single crops or full street scene photos. Evaluates into
         <span class="font-bold text-red-600">"red"</span>,
         <span class="font-bold text-emerald-600">"not_red"</span>, or
@@ -91,22 +99,22 @@ HTML_PAGE = """<!DOCTYPE html>
     </div>
 
     <div class="w-full bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 overflow-hidden mb-8 transition-all">
-      <div id="dropzone" class="p-8 sm:p-12 md:p-14 text-center cursor-pointer transition-all duration-300 hover:bg-slate-50/70 border-b border-slate-100 flex flex-col items-center justify-center min-h-[260px] group">
+      <div id="dropzone" class="p-8 sm:p-12 text-center cursor-pointer transition-all duration-300 hover:bg-slate-50/70 border-b border-slate-100 flex flex-col items-center justify-center min-h-[240px] group">
         <input type="file" id="file-input" multiple accept="image/*" class="hidden">
 
         <button type="button" class="px-8 py-4 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold text-base sm:text-lg rounded-2xl shadow-lg shadow-red-600/30 group-hover:scale-105 transition-all flex items-center space-x-3 mb-4 pointer-events-none">
           <svg class="w-6 h-6 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
           </svg>
-          <span>Select Image Files</span>
+          <span id="btn-select-text">Select Traffic Light Images</span>
         </button>
 
         <p class="text-sm font-semibold text-slate-700 mb-1">or drag and drop images here</p>
-        <p class="text-xs text-slate-400">Supports JPG, PNG, WEBP &bull; High-res full scenes or tight crops</p>
+        <p class="text-xs text-slate-400">Supports JPG, PNG, WEBP, PPM &bull; Single image or batch drop</p>
       </div>
 
       <div class="bg-slate-50/80 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs border-t border-slate-100">
-        <div class="flex items-center space-x-3 w-full sm:w-auto">
+        <div id="ctrl-light-left" class="flex items-center space-x-3 w-full sm:w-auto">
           <label for="scene-toggle" class="flex items-center space-x-2.5 cursor-pointer select-none">
             <input type="checkbox" id="scene-toggle" checked class="w-4 h-4 rounded text-red-600 focus:ring-0 border-slate-300 accent-red-600 cursor-pointer">
             <span class="font-bold text-slate-700">Scene Auto-Detect (YOLOv8)</span>
@@ -115,9 +123,15 @@ HTML_PAGE = """<!DOCTYPE html>
           <span class="text-slate-500 hidden sm:inline">Crops fixture or reports "no signal"</span>
         </div>
 
+        <div id="ctrl-sign-left" class="hidden items-center space-x-3 w-full sm:w-auto">
+          <span class="font-bold text-slate-700">GTSRB 43 Categories</span>
+          <span class="text-slate-400 hidden sm:inline">&bull;</span>
+          <span class="text-slate-500 hidden sm:inline">CLAHE Contrast Equalization Enabled</span>
+        </div>
+
         <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-end">
           <div class="flex items-center space-x-2">
-            <span class="font-semibold text-slate-600">Threshold:</span>
+            <span id="slider-label" class="font-semibold text-slate-600">Threshold:</span>
             <input type="range" id="threshold-slider" min="0.01" max="0.99" step="0.01" value="0.16" class="w-28 sm:w-36 accent-red-600 cursor-pointer">
             <span id="th-val" class="mono font-bold text-slate-800 w-10 text-right">0.16</span>
           </div>
@@ -143,6 +157,16 @@ HTML_PAGE = """<!DOCTYPE html>
           </div>
         </div>
 
+        <div id="clahe-box" class="mt-4 p-3 bg-slate-50 rounded-2xl border border-slate-200/80 hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">CLAHE Equalized Enhancement</span>
+            <span class="text-[10px] text-slate-400">Adaptive LAB Contrast</span>
+          </div>
+          <div class="w-24 h-24 rounded-xl overflow-hidden border border-slate-300 bg-white shadow-inner">
+            <img id="clahe-img" class="w-full h-full object-cover" alt="CLAHE Preview">
+          </div>
+        </div>
+
         <div id="batch-container" class="mt-6 pt-4 border-t border-slate-100 hidden">
           <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Batch Queue (<span id="batch-count">0</span>)</h3>
           <div id="batch-list" class="space-y-2 max-h-48 overflow-y-auto pr-1"></div>
@@ -150,7 +174,7 @@ HTML_PAGE = """<!DOCTYPE html>
       </div>
 
       <div class="md:col-span-5 bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 p-6 sm:p-8 flex flex-col items-center justify-between">
-        <div class="w-full flex flex-col items-center">
+        <div id="panel-light-mode" class="w-full flex flex-col items-center">
           <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">Signal Simulation</span>
 
           <div class="signal-housing p-4 rounded-3xl border border-slate-700 shadow-2xl flex flex-col space-y-3.5 mb-6">
@@ -178,8 +202,35 @@ HTML_PAGE = """<!DOCTYPE html>
           </div>
         </div>
 
+        <div id="panel-sign-mode" class="w-full flex flex-col items-center hidden">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Traffic Sign Recognition</span>
+
+          <div id="sign-symbol-card" class="w-24 h-24 rounded-3xl bg-slate-100 border-2 border-slate-200 shadow-md flex items-center justify-center text-4xl mb-4 transition-all">
+            🛑
+          </div>
+
+          <div id="sign-result-badge" class="px-5 py-2 rounded-full text-sm font-extrabold tracking-wide bg-slate-100 text-slate-600 border border-slate-200 shadow-sm mb-4 text-center max-w-full">
+            Awaiting Sign
+          </div>
+
+          <div id="sign-warning" class="w-full p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-semibold mb-4 text-center hidden">
+            ⚠️ Low Confidence (&lt;<span id="warn-conf-limit">75%</span>): Sign may be out-of-distribution or degraded.
+          </div>
+
+          <div class="w-full space-y-2 bg-slate-50 p-4 rounded-2xl border border-slate-200/70 text-xs">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Top 3 Predictions</div>
+            <div id="top3-list" class="space-y-2.5">
+              <div class="text-slate-400 text-center py-2">No sign processed</div>
+            </div>
+            <div class="flex justify-between items-center text-[11px] text-slate-500 pt-3 border-t border-slate-200/70 font-medium">
+              <span>ONNX Latency</span>
+              <span id="sign-latency-num" class="mono font-bold text-slate-800">-</span>
+            </div>
+          </div>
+        </div>
+
         <div class="w-full mt-6 text-center text-[11px] text-slate-400 font-medium">
-          Zero-Torch ONNX &bull; MobileNetV3-Small &bull; CPU / CUDA
+          Zero-Torch ONNX &bull; MobileNetV3 + GTSRB CNN &bull; CPU / CUDA
         </div>
       </div>
     </div>
@@ -190,7 +241,7 @@ HTML_PAGE = """<!DOCTYPE html>
       <div class="flex items-center space-x-2">
         <span class="font-bold text-slate-800">TLC Production</span>
         <span>&bull;</span>
-        <span>Trained on S2TLD & TLoNY Street Benchmarks</span>
+        <span>Signals (S2TLD/TLoNY) & Signs (GTSRB 43)</span>
       </div>
       <div>
         &copy; 2026 TLC &bull; Embedded ONNX Runtime Engine
@@ -199,13 +250,27 @@ HTML_PAGE = """<!DOCTYPE html>
   </footer>
 
   <script>
+    let activeMode = 'light';
     const dropzone = document.getElementById('dropzone');
     const fileInput = document.getElementById('file-input');
     const slider = document.getElementById('threshold-slider');
     const thVal = document.getElementById('th-val');
-    const hdrTh = document.getElementById('hdr-th');
+    const hdrStatVal = document.getElementById('hdr-stat-val');
+    const hdrStatLbl = document.getElementById('hdr-stat-lbl');
     const resetTh = document.getElementById('reset-th');
     const sceneToggle = document.getElementById('scene-toggle');
+    const sliderLabel = document.getElementById('slider-label');
+    const btnSelectText = document.getElementById('btn-select-text');
+    const heroTitle = document.getElementById('hero-title');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+
+    const btnModeLight = document.getElementById('btn-mode-light');
+    const btnModeSign = document.getElementById('btn-mode-sign');
+    const ctrlLightLeft = document.getElementById('ctrl-light-left');
+    const ctrlSignLeft = document.getElementById('ctrl-sign-left');
+    const panelLightMode = document.getElementById('panel-light-mode');
+    const panelSignMode = document.getElementById('panel-sign-mode');
+
     const lampRed = document.getElementById('lamp-red');
     const lampYellow = document.getElementById('lamp-yellow');
     const lampGreen = document.getElementById('lamp-green');
@@ -213,6 +278,16 @@ HTML_PAGE = """<!DOCTYPE html>
     const probNum = document.getElementById('prob-num');
     const probBar = document.getElementById('prob-bar');
     const latencyNum = document.getElementById('latency-num');
+
+    const signSymbolCard = document.getElementById('sign-symbol-card');
+    const signResultBadge = document.getElementById('sign-result-badge');
+    const signWarning = document.getElementById('sign-warning');
+    const warnConfLimit = document.getElementById('warn-conf-limit');
+    const top3List = document.getElementById('top3-list');
+    const signLatencyNum = document.getElementById('sign-latency-num');
+    const claheBox = document.getElementById('clahe-box');
+    const claheImg = document.getElementById('clahe-img');
+
     const previewImg = document.getElementById('preview-img');
     const previewPlaceholder = document.getElementById('preview-placeholder');
     const activeFilename = document.getElementById('active-filename');
@@ -222,6 +297,54 @@ HTML_PAGE = """<!DOCTYPE html>
 
     let currentFile = null;
     let currentData = null;
+
+    function setMode(mode) {
+      activeMode = mode;
+      if (mode === 'light') {
+        btnModeLight.className = 'px-4 py-1.5 rounded-xl bg-white text-slate-900 shadow-sm transition-all flex items-center space-x-1.5';
+        btnModeSign.className = 'px-4 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition-all flex items-center space-x-1.5';
+        ctrlLightLeft.classList.remove('hidden');
+        ctrlSignLeft.classList.add('hidden');
+        panelLightMode.classList.remove('hidden');
+        panelSignMode.classList.add('hidden');
+        claheBox.classList.add('hidden');
+
+        heroTitle.textContent = 'Traffic Light Classifier';
+        heroSubtitle.innerHTML = 'Upload single crops or full street scene photos. Evaluates into <span class=\"font-bold text-red-600\">\"red\"</span>, <span class=\"font-bold text-emerald-600\">\"not_red\"</span>, or <span class=\"font-bold text-slate-700\">\"no_traffic_light_found\"</span>.';
+        btnSelectText.textContent = 'Select Traffic Light Images';
+        sliderLabel.textContent = 'Threshold:';
+        slider.min = '0.01';
+        slider.max = '0.99';
+        slider.step = '0.01';
+        slider.value = '0.16';
+        thVal.textContent = '0.16';
+        hdrStatLbl.textContent = 'Threshold:';
+        hdrStatVal.textContent = '0.160';
+      } else {
+        btnModeSign.className = 'px-4 py-1.5 rounded-xl bg-white text-slate-900 shadow-sm transition-all flex items-center space-x-1.5';
+        btnModeLight.className = 'px-4 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition-all flex items-center space-x-1.5';
+        ctrlLightLeft.classList.add('hidden');
+        ctrlSignLeft.classList.remove('hidden');
+        panelLightMode.classList.add('hidden');
+        panelSignMode.classList.remove('hidden');
+
+        heroTitle.textContent = 'Traffic Sign Recognition';
+        heroSubtitle.innerHTML = 'Classify European & German standard traffic signs into <span class=\"font-bold text-slate-800\">43 GTSRB benchmark categories</span> with CLAHE contrast enhancement.';
+        btnSelectText.textContent = 'Select Traffic Sign Images';
+        sliderLabel.textContent = 'Min Conf:';
+        slider.min = '30';
+        slider.max = '99';
+        slider.step = '1';
+        slider.value = '75';
+        thVal.textContent = '75%';
+        hdrStatLbl.textContent = 'Min Conf:';
+        hdrStatVal.textContent = '75%';
+      }
+
+      if (currentFile !== null) {
+        uploadAndClassify(currentFile, false);
+      }
+    }
 
     dropzone.addEventListener('click', () => fileInput.click());
     dropzone.addEventListener('dragover', (e) => {
@@ -242,21 +365,35 @@ HTML_PAGE = """<!DOCTYPE html>
     });
 
     slider.addEventListener('input', (e) => {
-      const val = parseFloat(e.target.value).toFixed(2);
-      thVal.textContent = val;
-      hdrTh.textContent = val;
-      if (currentData !== null) renderResult(currentData, parseFloat(val));
+      if (activeMode === 'light') {
+        const val = parseFloat(e.target.value).toFixed(2);
+        thVal.textContent = val;
+        hdrStatVal.textContent = val;
+        if (currentData !== null) renderResultLight(currentData, parseFloat(val));
+      } else {
+        const val = parseInt(e.target.value, 10);
+        thVal.textContent = val + '%';
+        hdrStatVal.textContent = val + '%';
+        if (currentData !== null) renderResultSign(currentData, val);
+      }
     });
 
     resetTh.addEventListener('click', () => {
-      slider.value = 0.16;
-      thVal.textContent = "0.16";
-      hdrTh.textContent = "0.160";
-      if (currentData !== null) renderResult(currentData, 0.16);
+      if (activeMode === 'light') {
+        slider.value = 0.16;
+        thVal.textContent = '0.16';
+        hdrStatVal.textContent = '0.160';
+        if (currentData !== null) renderResultLight(currentData, 0.16);
+      } else {
+        slider.value = 75;
+        thVal.textContent = '75%';
+        hdrStatVal.textContent = '75%';
+        if (currentData !== null) renderResultSign(currentData, 75);
+      }
     });
 
     sceneToggle.addEventListener('change', () => {
-      if (currentFile !== null) uploadAndClassify(currentFile, false);
+      if (currentFile !== null && activeMode === 'light') uploadAndClassify(currentFile, false);
     });
 
     async function handleFiles(files) {
@@ -282,14 +419,25 @@ HTML_PAGE = """<!DOCTYPE html>
 
     async function uploadAndClassify(file, isBatch) {
       const buf = await file.arrayBuffer();
-      const params = new URLSearchParams({
-        filename: file.name,
-        threshold: slider.value,
-        scene: sceneToggle.checked ? 'true' : 'false'
-      });
+
+      let endpoint = '';
+      if (activeMode === 'light') {
+        const params = new URLSearchParams({
+          filename: file.name,
+          threshold: slider.value,
+          scene: sceneToggle.checked ? 'true' : 'false'
+        });
+        endpoint = '/api/classify?' + params.toString();
+      } else {
+        const params = new URLSearchParams({
+          filename: file.name,
+          confidence_threshold: slider.value
+        });
+        endpoint = '/api/classify_sign?' + params.toString();
+      }
 
       try {
-        const res = await fetch('/api/classify?' + params.toString(), {
+        const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/octet-stream' },
           body: buf
@@ -299,27 +447,45 @@ HTML_PAGE = """<!DOCTYPE html>
 
         if (!isBatch || file === currentFile) {
           currentData = data;
-          latencyNum.textContent = `${data.latency_ms.toFixed(1)} ms`;
-          renderResult(data, parseFloat(slider.value));
+          if (activeMode === 'light') {
+            latencyNum.textContent = `${data.latency_ms.toFixed(1)} ms`;
+            renderResultLight(data, parseFloat(slider.value));
+          } else {
+            signLatencyNum.textContent = `${data.latency_ms.toFixed(1)} ms`;
+            renderResultSign(data, parseFloat(slider.value));
+          }
         }
 
         if (isBatch) {
           const item = document.createElement('div');
           item.className = 'flex items-center justify-between text-xs bg-slate-50 p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-colors';
+
           let tagClass = 'bg-slate-200 text-slate-700';
-          let tagText = 'NO LIGHT';
-          if (data.label === 'red') {
-            tagClass = 'bg-red-100 text-red-700 border border-red-300';
-            tagText = 'RED';
-          } else if (data.label === 'not_red') {
-            tagClass = 'bg-emerald-100 text-emerald-700 border border-emerald-300';
-            tagText = 'NOT RED';
+          let tagText = 'UNKNOWN';
+          let metric = 'N/A';
+
+          if (activeMode === 'light') {
+            if (data.label === 'red') {
+              tagClass = 'bg-red-100 text-red-700 border border-red-300';
+              tagText = 'RED';
+            } else if (data.label === 'not_red') {
+              tagClass = 'bg-emerald-100 text-emerald-700 border border-emerald-300';
+              tagText = 'NOT RED';
+            } else {
+              tagText = 'NO LIGHT';
+            }
+            metric = data.p_red !== null ? (data.p_red * 100).toFixed(1) + '%' : 'N/A';
+          } else {
+            tagClass = data.is_confident ? 'bg-red-100 text-red-700 border border-red-300' : 'bg-amber-100 text-amber-700 border border-amber-300';
+            tagText = data.label;
+            metric = `${data.confidence.toFixed(1)}%`;
           }
+
           item.innerHTML = `
-            <span class="truncate max-w-[200px] mono font-medium text-slate-700">${file.name}</span>
+            <span class="truncate max-w-[180px] mono font-medium text-slate-700">${file.name}</span>
             <div class="flex items-center space-x-2">
-              <span class="mono text-slate-500 font-bold">${data.p_red !== null ? (data.p_red * 100).toFixed(1) + '%' : 'N/A'}</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-extrabold ${tagClass}">${tagText}</span>
+              <span class="mono text-slate-500 font-bold">${metric}</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-extrabold ${tagClass} truncate max-w-[120px]">${tagText}</span>
             </div>
           `;
           item.addEventListener('click', () => {
@@ -327,8 +493,13 @@ HTML_PAGE = """<!DOCTYPE html>
             currentData = data;
             activeFilename.textContent = file.name;
             previewImg.src = URL.createObjectURL(file);
-            latencyNum.textContent = `${data.latency_ms.toFixed(1)} ms`;
-            renderResult(data, parseFloat(slider.value));
+            if (activeMode === 'light') {
+              latencyNum.textContent = `${data.latency_ms.toFixed(1)} ms`;
+              renderResultLight(data, parseFloat(slider.value));
+            } else {
+              signLatencyNum.textContent = `${data.latency_ms.toFixed(1)} ms`;
+              renderResultSign(data, parseFloat(slider.value));
+            }
           });
           batchList.appendChild(item);
         }
@@ -337,7 +508,7 @@ HTML_PAGE = """<!DOCTYPE html>
       }
     }
 
-    function renderResult(data, threshold) {
+    function renderResultLight(data, threshold) {
       const label = data.label;
       const pRed = data.p_red;
 
@@ -374,12 +545,43 @@ HTML_PAGE = """<!DOCTYPE html>
       }
     }
 
-    function toggleView(tab) {
-      if (tab === 'batch' && batchContainer.classList.contains('hidden')) {
-        alert('Upload multiple files to see the batch list.');
-      } else if (tab === 'about') {
-        alert('TLC Architecture:\\n- MobileNetV3-Small classifier (ImageNet pretrained, custom linear logit head)\\n- Single-source letterbox preprocessing with ImageNet normalization\\n- YOLOv8 lightweight detector for scene localization\\n- Zero-torch ONNX Runtime inference');
+    function renderResultSign(data, threshold) {
+      if (data.clahe_b64) {
+        claheImg.src = data.clahe_b64;
+        claheBox.classList.remove('hidden');
+      } else {
+        claheBox.classList.add('hidden');
       }
+
+      const isConfident = data.confidence >= threshold;
+      if (isConfident) {
+        signWarning.classList.add('hidden');
+        signResultBadge.className = 'px-5 py-2 rounded-full text-sm font-extrabold tracking-wide bg-red-50 text-red-700 border-2 border-red-400 shadow-sm mb-4 text-center max-w-full';
+        signResultBadge.textContent = `${data.label} (${data.confidence.toFixed(1)}%)`;
+        signSymbolCard.className = 'w-24 h-24 rounded-3xl bg-red-50 border-2 border-red-300 shadow-lg shadow-red-500/10 flex items-center justify-center text-4xl mb-4 transition-all scale-105';
+      } else {
+        signWarning.classList.remove('hidden');
+        warnConfLimit.textContent = `${threshold}%`;
+        signResultBadge.className = 'px-5 py-2 rounded-full text-sm font-extrabold tracking-wide bg-amber-50 text-amber-800 border-2 border-amber-300 shadow-sm mb-4 text-center max-w-full';
+        signResultBadge.textContent = `Uncertain: ${data.label} (${data.confidence.toFixed(1)}%)`;
+        signSymbolCard.className = 'w-24 h-24 rounded-3xl bg-amber-50 border-2 border-amber-300 shadow-md flex items-center justify-center text-4xl mb-4 transition-all';
+      }
+
+      top3List.innerHTML = '';
+      (data.top3 || []).forEach((item, idx) => {
+        const row = document.createElement('div');
+        row.className = 'space-y-1';
+        row.innerHTML = `
+          <div class="flex justify-between items-center text-slate-700 font-semibold">
+            <span class="truncate max-w-[210px]">${idx + 1}. ${item.label}</span>
+            <span class="mono font-bold text-slate-900">${item.confidence.toFixed(1)}%</span>
+          </div>
+          <div class="w-full h-2 rounded-full bg-slate-200 overflow-hidden">
+            <div class="h-full ${idx === 0 ? 'bg-red-500' : 'bg-slate-400'} rounded-full transition-all duration-500" style="width: ${item.confidence}%"></div>
+          </div>
+        `;
+        top3List.appendChild(row);
+      });
     }
   </script>
 </body>
@@ -403,6 +605,12 @@ class TLCRequestHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps(meta).encode("utf-8"))
+        elif self.path == "/api/sign_metadata":
+            labels = load_sign_labels()
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps(labels).encode("utf-8"))
         else:
             self.send_response(HTTPStatus.NOT_FOUND)
             self.end_headers()
@@ -411,6 +619,8 @@ class TLCRequestHandler(BaseHTTPRequestHandler):
         parsed_url = urllib.parse.urlparse(self.path)
         if parsed_url.path == "/api/classify":
             self.handle_classify(parsed_url.query)
+        elif parsed_url.path == "/api/classify_sign":
+            self.handle_classify_sign(parsed_url.query)
         else:
             self.send_response(HTTPStatus.NOT_FOUND)
             self.end_headers()
@@ -468,6 +678,36 @@ class TLCRequestHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps(resp).encode("utf-8"))
+        except (ValueError, FileNotFoundError, RuntimeError) as e:
+            self.send_json_error(str(e), HTTPStatus.INTERNAL_SERVER_ERROR)
+
+    def handle_classify_sign(self, query_string: str) -> None:
+        params = urllib.parse.parse_qs(query_string)
+        filename = params.get("filename", ["uploaded_sign.jpg"])[0]
+        conf_thresh = float(params.get("confidence_threshold", [75.0])[0])
+
+        length = int(self.headers.get("Content-Length", 0))
+        img_bytes = self.rfile.read(length)
+
+        if not img_bytes:
+            self.send_json_error("Empty image bytes received", HTTPStatus.BAD_REQUEST)
+            return
+
+        try:
+            result = classify_sign(img_bytes, confidence_threshold=conf_thresh)
+            result["filename"] = filename
+
+            img = load_image(img_bytes)
+            clahe_img = apply_clahe(img)
+            buf = io.BytesIO()
+            clahe_img.save(buf, format="JPEG", quality=90)
+            clahe_b64 = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode("utf-8")
+            result["clahe_b64"] = clahe_b64
+
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps(result).encode("utf-8"))
         except (ValueError, FileNotFoundError, RuntimeError) as e:
             self.send_json_error(str(e), HTTPStatus.INTERNAL_SERVER_ERROR)
 
