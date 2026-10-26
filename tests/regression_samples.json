@@ -1,0 +1,26 @@
+{
+  "red": [
+    "data/raw/red/2020-03-30 11_41_44.495697082_crop_000.jpg",
+    "data/raw/red/diane-picchiottino-ljFC9W-859Y-unsplash_crop_005.jpg",
+    "data/raw/red/diane-picchiottino-ljFC9W-859Y-unsplash_crop_006.jpg",
+    "data/raw/red/sharkie-J0OuWXAU8w0-unsplash_crop_001.jpg",
+    "data/raw/red/daniel-newman-F9HDTU9nnfg-unsplash_crop_000.jpg",
+    "data/raw/red/2020-03-30 11_38_38.109583097_crop_000.jpg",
+    "data/raw/red/2020-03-30 11_38_38.109583097_crop_001.jpg",
+    "data/raw/red/2020-04-04 11_09_29.487911956_crop_001.jpg",
+    "data/raw/red/2020-04-04 11_31_41.274364356_crop_001.jpg",
+    "data/raw/red/2020-04-04 11_31_41.274364356_crop_002.jpg"
+  ],
+  "not_red": [
+    "data/raw/not_red/green/2020-04-04 11_33_17.783617280_crop_001.jpg",
+    "data/raw/not_red/green/daniel-bazalar--rtYx7qE6oM-unsplash_crop_001.jpg",
+    "data/raw/not_red/yellow/2020-04-04 11_14_43.865219864_crop_001.jpg",
+    "data/raw/not_red/green/2020-04-04 11_18_21.353961934_crop_001.jpg",
+    "data/raw/not_red/green/2020-03-30 11_46_50.801035090_crop_000.jpg",
+    "data/raw/not_red/green/2020-03-30 11_46_50.801035090_crop_001.jpg",
+    "data/raw/not_red/green/2020-04-04 11_09_12.474694598_crop_001.jpg",
+    "data/raw/not_red/green/2020-04-04 11_13_21.647037741_crop_000.jpg",
+    "data/raw/not_red/green/2020-04-04 11_26_03.091228709_crop_000.jpg",
+    "data/raw/not_red/green/2020-03-30 11_46_32.803167640_crop_000.jpg"
+  ]
+}
