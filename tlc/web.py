@@ -55,7 +55,6 @@ HTML_PAGE = """<!DOCTYPE html>
           <div class="flex flex-col">
             <div class="flex items-center space-x-1.5">
               <span class="text-xl font-extrabold tracking-tight text-slate-900">TLC</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200">VISION AI</span>
             </div>
           </div>
         </a>
@@ -63,12 +62,10 @@ HTML_PAGE = """<!DOCTYPE html>
 
       <div class="inline-flex p-1 bg-slate-100 rounded-2xl border border-slate-200 text-xs font-bold">
         <button id="btn-mode-light" onclick="setMode('light')" class="px-4 py-1.5 rounded-xl bg-white text-slate-900 shadow-sm transition-all flex items-center space-x-1.5">
-          <span>🚦</span>
           <span>Traffic Signals</span>
         </button>
         <button id="btn-mode-sign" onclick="setMode('sign')" class="px-4 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 transition-all flex items-center space-x-1.5">
-          <span>🛑</span>
-          <span>Traffic Signs (43 Classes)</span>
+          <span>Traffic Signs</span>
         </button>
       </div>
 
@@ -124,7 +121,7 @@ HTML_PAGE = """<!DOCTYPE html>
         </div>
 
         <div id="ctrl-sign-left" class="hidden items-center space-x-3 w-full sm:w-auto">
-          <span class="font-bold text-slate-700">GTSRB 43 Categories</span>
+          <span class="font-bold text-slate-700">GTSRB Benchmark</span>
           <span class="text-slate-400 hidden sm:inline">&bull;</span>
           <span class="text-slate-500 hidden sm:inline">CLAHE Contrast Equalization Enabled</span>
         </div>
@@ -205,8 +202,10 @@ HTML_PAGE = """<!DOCTYPE html>
         <div id="panel-sign-mode" class="w-full flex flex-col items-center hidden">
           <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Traffic Sign Recognition</span>
 
-          <div id="sign-symbol-card" class="w-24 h-24 rounded-3xl bg-slate-100 border-2 border-slate-200 shadow-md flex items-center justify-center text-4xl mb-4 transition-all">
-            🛑
+          <div id="sign-symbol-card" class="w-24 h-24 rounded-3xl bg-slate-100 border-2 border-slate-200 shadow-md flex items-center justify-center text-slate-700 mb-4 transition-all">
+            <svg class="w-10 h-10 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+              <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+            </svg>
           </div>
 
           <div id="sign-result-badge" class="px-5 py-2 rounded-full text-sm font-extrabold tracking-wide bg-slate-100 text-slate-600 border border-slate-200 shadow-sm mb-4 text-center max-w-full">
@@ -214,7 +213,7 @@ HTML_PAGE = """<!DOCTYPE html>
           </div>
 
           <div id="sign-warning" class="w-full p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-semibold mb-4 text-center hidden">
-            ⚠️ Low Confidence (&lt;<span id="warn-conf-limit">75%</span>): Sign may be out-of-distribution or degraded.
+            Low Confidence (&lt;<span id="warn-conf-limit">75%</span>): Sign may be out-of-distribution or degraded.
           </div>
 
           <div class="w-full space-y-2 bg-slate-50 p-4 rounded-2xl border border-slate-200/70 text-xs">
@@ -241,7 +240,7 @@ HTML_PAGE = """<!DOCTYPE html>
       <div class="flex items-center space-x-2">
         <span class="font-bold text-slate-800">TLC Production</span>
         <span>&bull;</span>
-        <span>Signals (S2TLD/TLoNY) & Signs (GTSRB 43)</span>
+        <span>Signals (S2TLD/TLoNY) & Signs (GTSRB)</span>
       </div>
       <div>
         &copy; 2026 TLC &bull; Embedded ONNX Runtime Engine
@@ -329,7 +328,7 @@ HTML_PAGE = """<!DOCTYPE html>
         panelSignMode.classList.remove('hidden');
 
         heroTitle.textContent = 'Traffic Sign Recognition';
-        heroSubtitle.innerHTML = 'Classify European & German standard traffic signs into <span class=\"font-bold text-slate-800\">43 GTSRB benchmark categories</span> with CLAHE contrast enhancement.';
+        heroSubtitle.innerHTML = 'Classify European & German standard traffic signs into <span class=\"font-bold text-slate-800\">GTSRB benchmark categories</span> with CLAHE contrast enhancement.';
         btnSelectText.textContent = 'Select Traffic Sign Images';
         sliderLabel.textContent = 'Min Conf:';
         slider.min = '30';
